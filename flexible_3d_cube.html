@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexible 3D-Cube</title>
+  <link rel="icon" type="image/png" href="/images/3d_cube.png">
+	<meta name="description" content="Scale or Rotate your CSS 3D Cube">
+	<link href="mycss.css" rel="stylesheet">
+</head>
+<body>
+	<div class="fixed">Flexible 3D-Cube</div>
+	<div class="cube" id="mycube">
+	  <span class="face front">1</span>
+	  <span class="face back">2</span>
+	  <span class="face right">3</span>
+	  <span class="face left">4</span>
+	  <span class="face top">5</span>
+	  <span class="face bottom">6</span>
+	</div>
+	<div class="cube" id="mycube1">
+	  <span class="face front">1</span>
+	  <span class="face back">2</span>
+	  <span class="face right">3</span>
+	  <span class="face left">4</span>
+	  <span class="face top">5</span>
+	  <span class="face bottom">6</span>
+	</div>
+	<div class="cube" id="mycube2">
+	  <span class="face front">1</span>
+	  <span class="face back">2</span>
+	  <span class="face right">3</span>
+	  <span class="face left">4</span>
+	  <span class="face top">5</span>
+	  <span class="face bottom">6</span>
+	</div>
+	<div style="position:fixed;bottom:20px;left:0;display:flex;width:100%;justify-content:space-around;">
+	<div class="coustam" rotate="0" scale="180px">
+	  <input type="range" min="-360" max="360" step="1" value="0"  oninput="mycube.style.transform=`rotateX(-12deg) rotateY(${this.value}deg)`;this.parentElement.setAttribute('rotate',`${this.value}deg`)">
+	  <input type="range" min="50" max="360" step="1" value="180" oninput="mycube.style.setProperty('--scale', `${this.value}px`);this.parentElement.setAttribute('scale',`${this.value}px`)">
+	</div>
+	<div class="coustam" rotate="0" scale="180px">
+	  <input type="range" min="-360" max="360" step="1" value="0"  oninput="mycube1.style.transform=`rotateX(-12deg) rotateY(${this.value}deg)`;this.parentElement.setAttribute('rotate',`${this.value}deg`)">
+	  <input type="range" min="50" max="360" step="1" value="180" oninput="mycube1.style.setProperty('--scale', `${this.value}px`);this.parentElement.setAttribute('scale',`${this.value}px`)">
+	</div>
+	<div class="coustam" rotate="0" scale="180px">
+	  <input type="range" min="-360" max="360" step="1" value="0"  oninput="mycube2.style.transform=`rotateX(-12deg) rotateY(${this.value}deg)`;this.parentElement.setAttribute('rotate',`${this.value}deg`)">
+	  <input type="range" min="50" max="360" step="1" value="180" oninput="mycube2.style.setProperty('--scale', `${this.value}px`);this.parentElement.setAttribute('scale',`${this.value}px`)">
+	</div>
+	</div>
+	<a id="source" target="_blank" alt="Sorce Code" href="https://github.com/rahul3v/flexible_3d_cube">Sorce Code</a>
+</body>
+</html>

@@ -1,0 +1,88 @@
+*{box-sizing: border-box;}
+html{height:100%}
+body{
+margin:0;
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+background: #faebd7;
+justify-content:space-around;
+}
+
+.cube {
+  --scale: 180px;
+  --border:14px;
+  --scale1: calc(var(--scale)/2);
+  width: var(--scale);
+  height: var(--scale);
+  backface-visibility: visible;
+  transform: rotateX(-40deg) rotateY(32deg);
+  transform: rotateX(-20deg) rotateY(63deg);
+  transform: rotateX(-15deg) rotateY(45deg);
+  transform: rotateX(-12deg) rotateY(60deg);
+  transform-style: preserve-3d;
+  border-radius: 50%;
+  background: #1f1f1f;
+}
+
+.face {
+  position: absolute;
+  width: var(--scale);
+  height: var(--scale);
+  background: rgba(98, 240, 225, 0.4) !important;
+  border: var(--border) solid rgba(255, 255, 255, 0.66);
+  line-height: 100px;
+  font-size: 60px;
+  color: rgba(0,0,0, 0);
+  text-align: center; 
+  -moz-user-select:none;
+  user-select:none;
+  border-color:#e5fdfa;
+}
+
+.front {transform: translateZ(var(--scale1));}
+.back {transform: rotateY(-180deg) translateZ(var(--scale1));}
+.right {transform: rotateY(90deg) translateZ(var(--scale1));}
+.left {transform: rotateY(-90deg) translateZ(var(--scale1));}
+.bottom{
+  transform: rotateX(-90deg) translateZ(var(--scale1));
+  box-shadow:inset 0px 0px 6px rgba(0, 0,0, 0.6), 0px 0px 80px rgba(0, 0,0, 0.6) !important
+}
+.top {transform: rotateX(90deg) translateZ(var(--scale1));}
+.top, .bottom {box-shadow: inset 0px 0px 6px rgba(0, 0,0, 0.6);}
+
+#mycube1 > .face {
+    background: rgba(240, 98, 125, 0.4) !important;
+}
+
+#mycube2 > .face {
+    background: rgba(98, 107, 240, 0.4) !important;
+}
+
+.fixed{position:fixed;top:0;left:0;font-size:20px;background-color:#f27d9a;padding:16px;box-shadow:0 2px 4px rgba(0,0,0,0.4);}
+.coustam{
+  position:relative;
+  background: #1f1f1f;
+  text-align: center;
+  padding: 25px 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.4);
+}
+.coustam::before,.coustam::after{
+	content:'rotate : ' attr(rotate);
+	position:absolute;
+	top:8px;
+	left:15px;
+	font-size:12px;
+  color:white;
+}
+.coustam::after{
+	content:'height : ' attr(scale);
+	left:initial;
+	right:15px;
+}
+input{width:45%}
+
+#source{position:fixed;top:20px;right:30px;padding:10px;color:#212121}
+#source:hover{color:black}
